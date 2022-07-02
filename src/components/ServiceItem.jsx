@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Service = ({ props }) => {
   return (
-    <ServiceContainer>
+    <ServiceContainer className="servicesItems-container">
       <Image src={Placeholder} fluid={true}/>
       <ServiceDescription>
         <Link to="/forms" >{props.title}</Link>
@@ -18,18 +18,30 @@ const Service = ({ props }) => {
 const ServiceContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  width: 30vw;
-  height: 40vh;
+  width: 30%;
+  height: auto;
   margin: 10px;
   font-family: 'Poppins';
+
+  /* @media(min-width: 390px) and (max-width: 599px) {
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+  } */
+
+  @media(min-width: 390px) and (max-width: 765px) {
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+  }
 `;
 
 const Img = styled.img`
   z-index: 1;
-  height: 80%;
-  width: 85%;
+  height: auto;
+  width: 100%;
 `;
 
 const ServiceDescription = styled.div`
@@ -45,9 +57,11 @@ const ServiceDescription = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-basis: content;
-  flex-shrink: 2;
-  padding: 15px;
+  text-align: center;
+  /* flex-basis: content;
+  flex-shrink: 2; */
+  padding: 10px;
+
 `;
 
 export default Service;

@@ -35,6 +35,12 @@ const TowForm = () => {
 const StyledForm = styled(Form)`
   width: 70%;
   display: flex;
+
+  @media(min-width: 390px) {
+    flex-direction: column;
+    width: auto;
+    height: min-content;
+  }
 `;
 
 export default TowForm;
